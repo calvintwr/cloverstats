@@ -1,0 +1,33 @@
+{
+  "name": "cloverstats",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "biguint-format": "^1.0.0",
+    "bluebird": "2.9.13",
+    "body-parser": "~1.0.0",
+    "continuation-local-storage": "^3.1.4",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "dotenv": "^1.1.0",
+    "dottie": "0.3.1",
+    "express": "~4.2.0",
+    "flake-idgen": "^1.0.0",
+    "hogan.js": "3.0.2",
+    "inflection": "^1.7.0",
+    "jade": "~1.3.0",
+    "lodash": "^3.6.0",
+    "moment": "2.9.0",
+    "morgan": "~1.0.0",
+    "node-uuid": "^1.4.3",
+    "pg": "4.3.0",
+    "pg-hstore": "2.3.1",
+    "sequelize": "2.1.0",
+    "string": "3.0.0",
+    "underscore": "1.8.2"
+  }
+}

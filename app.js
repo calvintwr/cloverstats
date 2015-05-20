@@ -96,7 +96,7 @@ engine.start();
 setInterval(function() {
     if (isEngineRunning) {
         isEngineRunning = true;
-        engine.start().then(function() {
+        engine.start().finally(function() {
             isEngineRunning = false;
         });
     } else {

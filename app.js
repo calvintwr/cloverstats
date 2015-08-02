@@ -89,33 +89,8 @@ console.log('Start the awesome stats engine...');
 
 
 var engine = require('./apps/engine');
-var isEngineRunning = true;
-var isBusyCounter = 0;
-var intervals = 7200000; // 12 minutes
+// set interval as required, else, defaults to 2 hours.
+// engine.intervals = 2000;
 engine.start();
-
-// set the intervals.
-setInterval(function() {
-    if (isEngineRunning) {
-        isEngineRunning = true;
-        engine.start().finally(function() {
-            DEBUG('engine')('Process is complete. Downing `isEngineRunning` flag.');
-            isEngineRunning = false;
-        });
-    } else {
-
-        // isBusy failsafe
-        isBusyCounter += 1;
-        if (isBusyCounter > 4) {
-            // something is wrong, taking longer than usual to complete. Throw error to stop the whole thing.
-            console.log('WARNING: Engine have been busy for', intervals*isBusyCounter/1000/60, 'minutes.');
-            console.log('Breaking the engine by throwing error.');
-            throw 'Failsafe stop.';
-        }
-
-        console.log('WARNING: Engine is busy!');
-    }
-}, intervals);
-
 
 module.exports = app;
